@@ -44,7 +44,7 @@ class Rectangle:
 
         Args:
             value(int): value to be set.
-        """        
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
