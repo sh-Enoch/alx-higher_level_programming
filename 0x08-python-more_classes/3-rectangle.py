@@ -81,10 +81,10 @@ class Rectangle:
 
     def __str__(self):
         """Define a method str that returns #."""
-        result = ""
+        res = ""
 
         if self.__width == 0 or self.__height == 0:
-            return result
+            return res
         else:
-            result += "\n".join("#" * self.__width for j in range(self.__height))
-        return result
+            res += "\n".join("#" * self.__width for j in range(self.__height))
+        return res
