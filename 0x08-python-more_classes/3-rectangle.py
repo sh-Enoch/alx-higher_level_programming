@@ -86,8 +86,5 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return result
         else:
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    result += "#"
-                result += "\n"
+            result += "\n".join("#" * self.__width for j in range(self.__height))
         return result
