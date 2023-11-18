@@ -1,0 +1,24 @@
+--------------
+3-say_my_name module
+--------------
+
+import the module from file:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+use the imported module:
+    >>> say_my_name("Enoch", "Wafula")
+    My name is Enoch Wafula
+
+    >>> say_my_name(1, "huwawa")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("j", 3)
+    Traceback (most recent call last):
+       ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
