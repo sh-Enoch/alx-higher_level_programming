@@ -1,3 +1,3 @@
 -- Lists all privileges.
-SHOW GRANTS FOR 'user_0d_1'@':localhost';
-SHOW GRANTS FOR 'user_0d_2'@l'ocalhost';
+SHOW IF EXISTS GRANTS FOR 'user_0d_1'@':localhost';
+SHOW IF EXISTS GRANTS FOR 'user_0d_2'@l'ocalhost';
