@@ -21,4 +21,4 @@ class Student:
         if attrs:
             return {attr: getattr(self, attr) for attr in attrs}
         else:
-            return self.__dict__
+            return self.__dict__.copy()
