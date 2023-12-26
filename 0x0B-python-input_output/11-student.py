@@ -4,8 +4,9 @@
 
 class Student:
     """Define a class student."""
+
     def __init__(self, first_name, last_name, age):
-        """Initialize class student
+        """Initialize class student.
 
         Args:
             first_name(string): first name
@@ -29,6 +30,6 @@ class Student:
 
     def reload_from_json(self, json):
         """Replace all attributes of the student instance."""
-	for item in json:
+        for item in json:
             if item in self.__dict__:
                 self.__dict__[item] = json[item]
