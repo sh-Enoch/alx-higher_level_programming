@@ -66,7 +66,7 @@ class Rectangle(Base):
             value(int): value to be x
 
         """
-        if x >= 0:
+        if value >= 0:
             self.__x = value
 
     @property
@@ -77,5 +77,5 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Set y."""
-        if y >= 0:
+        if value >= 0:
             self.__y = value
