@@ -123,7 +123,7 @@ class Rectangle(Base):
         return area
 
     def display(self):
-        """Prints in stdout the Rectangle."""
+        """Print in stdout the Rectangle."""
         for i in range(self.__height):
             for j in range(self.__width):
                 print('#', end='')
@@ -134,4 +134,7 @@ class Rectangle(Base):
         t = type(self).__name__
         h = self.__height
         w = self.__width
-        return "[{}] ({}) {}/{} - {}/{}".format(t, self.id, self.__x, self.__y, w, h)
+        i = self.__id
+        x = self.__x
+        y = self.__y
+        return "[{}] ({}) {}/{} - {}/{}".format(t, i, x, y, w, h)
