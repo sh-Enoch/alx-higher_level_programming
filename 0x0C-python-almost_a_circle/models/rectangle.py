@@ -128,3 +128,10 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print('#', end='')
             print()
+
+    def __str__(self):
+        """Return new string."""
+        t = type(self).__name__
+        h = self.__height
+        w = self.__width
+        return "[{}] ({}) {}/{} - {}/{}".format(t, self.id, self.__x, self.__y, w, h)
