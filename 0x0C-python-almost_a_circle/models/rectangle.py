@@ -134,7 +134,7 @@ class Rectangle(Base):
         t = type(self).__name__
         h = self.__height
         w = self.__width
-        i = self.__id
+        i = self.id
         x = self.__x
         y = self.__y
         return "[{}] ({}) {}/{} - {}/{}".format(t, i, x, y, w, h)
