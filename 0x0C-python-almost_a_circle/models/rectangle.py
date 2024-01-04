@@ -141,5 +141,4 @@ class Rectangle(Base):
 
     def update(self, *args):
         """Assign arguments to each attribute."""
-        h = self.__height
-        self.id, self.__width, h, self.__x, self.__y = args
+        self.id, self.width, self.height, self.x, self.y = args
