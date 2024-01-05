@@ -77,7 +77,7 @@ class Rectangle:
                     visual_str += str(self.print_symbol)
                 visual_str += '\n'
 
-            return visual_str
+            return visual_str[:-1]
 
     def __del__(self):
         """Delete instance of rectagle."""
