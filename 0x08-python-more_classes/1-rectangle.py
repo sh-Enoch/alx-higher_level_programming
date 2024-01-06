@@ -1,53 +1,56 @@
-#!/usr/bin/python3
-"""Defines a class Rectangle."""
+#!usr/bin/python3
+"""Class Rectangle."""
 
 
 class Rectangle:
-    """This a class rectangle."""
-    def __init__(self, width=0, height=0):
-        """Initialize a new instance of rectangle.
+    """Define class Rectangle."""
 
-        Args:
-           width (int):  private instance attribute.
-           height (int): private instance attribute.
+    print_symbol = '#'
+    number_of_instances = 0
+
+    def __init__(self, width=0, height=0):
+        """Class constructor.
+
+        ARGS:
+            width(int) - initialized to 0.
+            height(int) - initialized to 0.
         """
         self.__width = width
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
-        """Get the value of width."""
+        """Get width value."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the new value of the private attribute.
+        """Set width.
 
         Args:
-           value(int): value to return
+            Value.
         """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
+        if isinstance(value, int):
+            if value >= 0:
+                self.__width = value
+            else:
+                raise ValueError('width must be >= 0')
         else:
-            self.__width = value
+            raise TypeError('width must be an integer')
 
     @property
     def height(self):
-        """Get the value of the height."""
+        """Get height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Define  a setter method height.
-
-        Args:
-            value(int): value to be set.
-        """
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
+        """Set height."""
+        if isinstance(value, int):
+            if value >= 0:
+                self.__height = value
+            else:
+                raise ValueError('height must be >= 0')
         else:
-            self.__height = value 
+            raise TypeError('height must be an integer')
