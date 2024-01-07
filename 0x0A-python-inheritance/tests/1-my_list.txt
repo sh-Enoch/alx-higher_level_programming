@@ -28,6 +28,6 @@
   >>> new_list.print_sorted()
   []
 
-  >>> print(new_list is new_list.print_sorted())
-  []
+  >>> a = my_list is my_list.print_sorted()
+  >>> print(a)
   False
