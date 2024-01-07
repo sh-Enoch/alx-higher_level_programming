@@ -28,6 +28,8 @@
   >>> new_list.print_sorted()
   []
 
-  >>> a = my_list is my_list.print_sorted()
-  >>> print(a)
+  >>> a = new_list.print_sorted()
+  []
+
+  >>> new_list is a
   False
