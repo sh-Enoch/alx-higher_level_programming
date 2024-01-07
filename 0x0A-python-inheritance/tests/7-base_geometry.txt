@@ -1,26 +1,23 @@
------------------------
-7-base_geometry module
------------------------
+ >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-import the module
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+object of the class
+ >>> bg = BaseGeometry()
+ >>> bg.area()
+ Traceback (most recent call last):
+   ...
+ Exception: area() is not implemented
 
-    >>> bg = BaseGeometry()
+ >>> bg.integer_validator("z", 12)
+ >>> bg.integer_validator("name", "Enoch")
+ Traceback (most recent call last):
+   ...
+ TypeError: Enoch must be an integer
+ >>> bg.integer_validator("a", 0)
+ Traceback (most recent call last):
+  ...
+ ValueError: 0 must be greater than 0
 
-    >>> bg.integer_validator('a', 'i')
-    Traceback (most recent call)
-       ...
-    TypeError:a must be an integer
-
-    >>> bg.integer_validator('a', 0)
-    Traceback (most recent call)
-        ...
-    ValueError: a must be greater than 0
-
-    >>> bg.integer_validator('a', 1)
-    >>> bg.integer_validator(1, 2)
-    Traceback (most recent call)
-        ...
-    TypeError: name must be a string
-
-
+ >>> bg.integer_validator(2, 13)
+ Traceback (most recent call last):
+  ...
+ TypeError: name must be a string
