@@ -16,3 +16,18 @@
 
   >>> my_list.print_sorted()
   [1, 4, 7]
+
+  >>> my_list.append(-2)
+  >>> my_list.print_sorted()
+  [-2, 1, 4, 7]
+
+  >>> new_list = MyList()
+  >>> print(new_list)
+  []
+
+  >>> new_list.print_sorted()
+  []
+
+  >>> print(new_list is new_list.print_sorted())
+  []
+  False
