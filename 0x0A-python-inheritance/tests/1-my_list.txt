@@ -21,6 +21,11 @@
   >>> my_list.print_sorted()
   [-2, 1, 4, 7]
 
+  >>> b = my_list.print_sorted()
+  [-2, 1, 4, 7]
+  >>> my_list is b
+  False
+
   >>> new_list = MyList()
   >>> print(new_list)
   []
