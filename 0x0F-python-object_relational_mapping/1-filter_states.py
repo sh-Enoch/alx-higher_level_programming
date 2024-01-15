@@ -3,19 +3,16 @@
 import MySQLdb
 from sys import argv
 
-
-def get_states(username, password, dbname):
-    """List all states from database."""
-    db = MySQLdb.connect(host="localhost", port=3306, user=str(username),
-                         passwd=str(password), db=str(dbname))
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
-    results = cursor.fetchall()
-    for row in results:
+    query = ("SELECT * FROM states WHERE name LIKE BINARY 'N%'
+             ORDER BY id ASC")
+    cursor.execute(query)
+
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
     cursor.close()
     db.close()
-
-
-if __name__ == "__main__":
-    get_states(argv[1], argv[2], argv[3])
