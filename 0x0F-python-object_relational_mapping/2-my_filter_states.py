@@ -1,18 +1,24 @@
 #!/usr/bin/python3
-"""Take in an argument and display its values."""
+"""Script that takes an argument and displays all values in states."""
+import sys
 import MySQLdb
-import argv from sys
 
 
 if __name__ == "__main__":
-    """Open a database  connection."""
-    db =  MySQLdb.connect(host="localhost", port=3306, user= sys.argv[1],
-                          db=sys.argv[3], passwd=sys[2)
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    state_name = sys.argv[4]
+
+    db = MySQLdb.connect(host="localhost", port=3306, user=str(username),
+                         passwd=str(password), db=database_name)
     cursor = db.cursor()
-    query = ("SELECT * FROM states WHERE name LIKE BINARY '{}'
-             ORDER BY id ASC").format(sys.argv[4])
-    rows = cus=rsor.fetchall()
-    for row in rows:
-        print(row)
+    query = ("SELECT * FROM states WHERE LIKE BINARY '{}' ORDER BY id ASC"
+             .format(state_name))
+    cursor.execute(query)
+
+    results = cursor.fetchall()
+    for result in results:
+        print(result)
     cursor.close()
     db.close()
