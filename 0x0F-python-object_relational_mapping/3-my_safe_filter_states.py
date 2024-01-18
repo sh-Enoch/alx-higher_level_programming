@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script takes in arguments and displays all the values in the states table."""
+"""This script takes arguments and displays values in the states table."""
 import MySQLdb
 import sys
 
@@ -9,8 +9,8 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
     state_name = sys.argv[4]
 
-    db = MySQLdb.connect(port=3306, host='localhost', user=username, 
-         passwd=password, db=database_name)
+    db = MySQLdb.connect(port=3306, host='localhost', user=username,
+                         passwd=password, db=database_name)
     cursor = db.cursor()
 
     query = ('SELECT * FROM states WHERE name LIME BINARY = ? ORDER BY id ASC')
