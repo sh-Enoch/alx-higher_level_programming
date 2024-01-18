@@ -13,7 +13,7 @@ if __name__ == "__main__":
                          passwd=password, db=database_name)
     cursor = db.cursor()
 
-    query = ('SELECT * FROM states WHERE name LIKE BINARY = ? ORDER BY id ASC')
+    query = ('SELECT * FROM states WHERE name = ? ORDER BY id ASC')
     cursor.execute(query, state_name)
 
     all_states = cursor.fetchall()
