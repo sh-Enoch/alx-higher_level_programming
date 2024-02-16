@@ -3,11 +3,12 @@
 import MySQLdb
 from sys import argv
 
+
 def get_states(username, password, dbname):
     """List all states fom dbase."""
     db = MySQLdb.connect(host="localhost", port=3306, user=str(username),
-                         passwd=str(password), db = str(dbname))
-    cur = bd.cursor()
+                         passwd=str(password), db=str(dbname))
+    cur = db.cursor()
     query = ("SELECT * FROM states ORDER BY id ASC;")
     cur.execute(query)
 
