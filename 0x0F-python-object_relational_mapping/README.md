@@ -1,11 +1,9 @@
-0x0F. Python - Object-relational mapping
-In this project we learn how to associate database with python.
-Link Database an d python.
-We use MySQLdb to connect toa  MySQL database and execute sql queries.
-In the second part we Use SQLAlchemy  which is an Object Relational Mapper.
-No more SQL queries needed.
+PROJECT: Python - Object-relational mapping
 
-   What can i do with my objects.
-
-The biggest difficulty with ORM is the syntax.
-
+Why Python programming is awesome
+How to connect to a MySQL database from a Python script
+How to SELECT rows in a MySQL table from a Python script
+How to INSERT rows in a MySQL table from a Python script
+What ORM means
+How to map a Python Class to a MySQL table
+How to create a Python Virtual Environment
