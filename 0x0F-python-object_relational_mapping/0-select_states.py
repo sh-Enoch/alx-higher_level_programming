@@ -1,15 +1,17 @@
 #!/usr/bin/python3
 """Script lists all states from the database."""
 import MySQLdb
-from sys import argv
+import sys
 
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    dbase = sys.argv[3]
 
-def get_states(username, password, dbname):
-    """List all states fom dbase."""
-    db = MySQLdb.connect(host="localhost", port=3306, user=str(username),
-                         passwd=str(password), db=str(dbname))
+    db = MySQLdb.connect(port=3306, host='localhost', username=username,
+                         passwd=password, database=db)
     cur = db.cursor()
-    query = ("SELECT * FROM states ORDER BY id ASC")
+    query = "SELECT * FROM states ORDER BY id ASC"
     cur.execute(query)
 
     rows = cur.fetchall()
@@ -17,6 +19,3 @@ def get_states(username, password, dbname):
         print(row)
     cur.close()
     db.close()
-
-    if __name__ == '__main__':
-        get_states(argv[1], argv[2], argv[3])
