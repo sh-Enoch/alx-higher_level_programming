@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """Escape SQL injection."""
 import MySQLdb
 import sys
