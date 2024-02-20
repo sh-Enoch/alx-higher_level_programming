@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""cript that lists all states with a name starting with N."""
+"""Script that lists all states with a name starting with N."""
 
 
 import sys
@@ -16,10 +16,9 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", port=3306, user=username,
                            passwd=password, db=db_name, charset="utf8")
     cur = conn.cursor()
-    new = ('SELECT cities.id, cities.name, states.name
-            FROM cities JOIN states WHERE cities.state_id=states.id
-	    ORDER BY id ASC')
-           .format(st))
+    new = ('SELECT C.id, C.name, state.name
+           FROM cities AS C
+           JOIN states ON C.states_id=states.id ORDER BY C.id ASC')
     cur.execute(new)
     query_rows = cur.fetchall()
 
