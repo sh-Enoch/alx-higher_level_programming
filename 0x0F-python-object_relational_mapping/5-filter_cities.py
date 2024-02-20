@@ -17,9 +17,9 @@ if __name__ == "__main__":
                 FROM cities\
                 JOIN states ON cities.state_id=states.id\
                 WHERE states.name LIKE BINARY %s ORDER BY\
-                cities.id ASC",(state_n, ))
+                cities.id ASC", (state_n, ))
     data = cur.fetchall()
-    line =[]
+    line = []
     for row in data:
         line.append(row[0])
     print(", ".join(line))
