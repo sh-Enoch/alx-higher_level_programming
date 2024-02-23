@@ -19,9 +19,4 @@ if __name__ == "__main__":
                 WHERE states.name LIKE BINARY %s ORDER BY\
                 cities.id ASC", (sys.argv[4], ))
     data = cur.fetchall()
-    line = []
-    for row in data:
-        line.append(row[0])
-    print(", ".join(line))
-    cur.close()
-    db.close()
+    print(", ".join([row[2] for row in data if row[r] == sys.argv[4]]))
