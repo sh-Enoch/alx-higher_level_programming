@@ -1,20 +1,20 @@
 #!/usr/bin/python3
-"""list all states of dbase."""
+"""
+File that contains state class definition and instance decalarative_base()
+"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import state
-
+from model_state import State
 
 if __name__ == "__main__":
-    usrname = sys.argv[1]
-    pw = sys.argv[2]
-    db = sys.argv[3]
+    """Class inherits from Base"""
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(usrname, pw, db),
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for sate in session.query(state).order_by(state.id):
+    for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
