@@ -143,7 +143,7 @@ class Rectangle(Base):
         """Assign arguments to each attribute."""
         ls = []
         for arg in args:
-           ls.append(arg)
+            ls.append(arg)
         if len(ls) == 5:
             self.id = ls[0]
             self.__width = ls[1]
