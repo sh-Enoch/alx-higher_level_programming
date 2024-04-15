@@ -37,3 +37,12 @@ class Base:
             with open(a, 'w', encoding='utf-8') as f:
                 string = "[]"
                 f.write(string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Return the list of the JSON string representation."""
+        if json_string is None:
+            return []
+        else:
+            a = json.loads(json_string)
+            return a
