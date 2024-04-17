@@ -8,6 +8,15 @@ def pascal_triangle(n):
         return []
     else:
         ls = []
-        for i in range(1, n):
-            ls.append([])
+        ls.append([1])
 
+        for i in range(1, n):
+            previous_row = ls[i - 1]
+            current_row = [1]
+
+            for j in range(1, i):
+                current_row.append(previous_row[j - 1] + previous_row[j])
+            current_row.append(1)
+
+            ls.append(current_row)
+        return ls
