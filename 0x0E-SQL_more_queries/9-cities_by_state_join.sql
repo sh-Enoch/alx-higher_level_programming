@@ -1,4 +1,4 @@
--- Lists all cities in the database hbtn_0d_usa
+-- Lists cities in the database hbtn_0d_usa
 -- Records are sorted in ascending order of cities.id
 SELECT c.`id`, c.`name`, s.`name`
   FROM `cities` AS c
